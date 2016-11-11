@@ -91,7 +91,7 @@ handle_output() {
 notify () {
     gdbus call "${NOTIFY_ARGS[@]}"  --method org.freedesktop.Notifications.Notify \
           "$APP_NAME" "$REPLACE_ID" "$ICON" "$SUMMARY" "$BODY" \
-          [] "$(concat_hints "${HINTS[@]}")" "int32 $EXPIRE_TIME" | handle_output
+          "[]" "$(concat_hints "${HINTS[@]}")" "int32 $EXPIRE_TIME" | handle_output
 }
 
 notify_close () {
